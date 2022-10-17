@@ -72,9 +72,8 @@ class BinaryHeap:
 
     def reorder(self):
         # Para que el método tenga efecto se debe modificar la key de los nodos previamente
-        node_list = self.get_nodes()
-        for node in node_list:
-            self.insert(node)
+        for i in range(2, self.size+1):
+            self.percolateup(i, self.array[i])
 
     def get_nodes(self):
         copy = deepcopy(self)
